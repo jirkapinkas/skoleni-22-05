@@ -1,0 +1,15 @@
+{
+  "namespace": "com.example.demostreamsspring",
+  "type": "record",
+  "name": "CountAndSum",
+  "fields": [
+    {
+      "name": "count",
+      "type": "long"
+    },
+    {
+      "name": "sum",
+      "type": "double"
+    }
+  ]
+}

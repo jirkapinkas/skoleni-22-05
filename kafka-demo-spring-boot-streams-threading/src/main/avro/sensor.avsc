@@ -1,0 +1,15 @@
+{
+  "namespace": "com.example.demostreamsspring",
+  "type": "record",
+  "name": "Sensor",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "location",
+      "type": "string"
+    }
+  ]
+}

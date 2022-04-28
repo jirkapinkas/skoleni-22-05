@@ -1,0 +1,1 @@
+Nutne vytvorit ucet na confluent cloudu a nahradit username a password v MainConsumer & MainProducer
