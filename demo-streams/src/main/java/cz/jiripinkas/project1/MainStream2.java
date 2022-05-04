@@ -45,7 +45,11 @@ public class MainStream2 {
                             return val < 10.0;
                         })
                         .mapValues((key, temperature) -> temperature.getVal())
-                        .to("sensor_A_filtered_under_10", Produced.with(Serdes.String(), Serdes.Double()));
+                        .mapValues((s, aDouble) -> String.valueOf(aDouble))
+                        .peek((s, aDouble) -> {
+                            System.out.println("added some data to output topic");
+                        })
+                        .to("sensor_A_filtered_under_10", Produced.with(Serdes.String(), Serdes.String()));
         final KafkaStreams streams = new KafkaStreams(builder.build(), streamsConfiguration);
         // The drawback of cleaning up local state prior is that your app must rebuilt its local state from scratch, which
         // will take time and will require reading all the state-relevant data from the Kafka cluster over the network.

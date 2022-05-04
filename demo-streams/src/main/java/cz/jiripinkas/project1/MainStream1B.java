@@ -15,7 +15,7 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Properties;
 
-public class MainStream1 {
+public class MainStream1B {
 
     public static void main(String[] args) {
         final Properties streamsConfiguration = new Properties();
