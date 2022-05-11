@@ -1,0 +1,20 @@
+{
+  "namespace": "cz.jiripinkas.project1",
+  "type": "record",
+  "name": "Movie",
+  "fields": [
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "year",
+      "type": "int"
+    },
+    {
+        "name" : "stuff",
+        "type" : ["null", "string"],
+        "default" : null
+    }
+  ]
+}
