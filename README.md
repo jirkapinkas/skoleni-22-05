@@ -1,5 +1,12 @@
 Všeobecné informace k materiálům:
 
+- U většiny příkladů (kromě příkladu, který má v názvu confluent-cloud) se předpokládá,
+  že máte na počítači nainstalovaný Docker.
+- Příklady jsou postavené na Java 17 a používají Lombok. Pro otevření příkladů v IDE 
+  doporučuji použít IntelliJ Idea (stačí Community Version).
+  Do Eclipse se musí podpora pro Lombok doinstalovat, v Idea to je out-of-the-box.
+
+
 Příklady jsou rozděleny do skupin:
 
 - (A) Základy Kafky: consumer, producer, avro (vše bez Streamů)
@@ -8,9 +15,6 @@ Příklady jsou rozděleny do skupin:
 
 Číslování u příkladů specifikuje pořadí, v jakém se na školení příklady probírají
   a většinou také obtížnost (1 = nejmenší obtížnost)
-
-U většiny příkladů (kromě příkladu, který má v názvu confluent-cloud) se předpokládá,
-  že máte na počítači nainstalovaný Docker.
   
 Obyčejně příklad začíná zavoláním:
 

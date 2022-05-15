@@ -1,19 +1,7 @@
-Zavolat:
+Tento příklad je stejný jako příklad A-1-kafka-demo-basic-local, jenom máme k dispozici cluster,
+který se skládá ze 3 brokerů. Topic vytvořený pomocí MainCreateTopic bude mít replication factor = 2.
 
-    docker-compose up -d
+V tomto příkladu se dá hezky vyzkoušet:
 
-Spustit:
-
-    Aplikaci producera a consumera
-
-List topicu:
-
-    docker run --rm --tty --network kafka_net confluentinc/cp-kafkacat kafkacat -b kafka_1:9092 -L
-
-Obsah topicu first_topic (kafkacat bude fungovat jako consumer):
-
-    docker run --rm --tty --network kafka_net confluentinc/cp-kafkacat kafkacat -b kafka_1:9092 -t first_topic
-
-Kafdrop:
-
-    http://localhost:9000
+- Co se stane, když vypadne jeden broker (data v clusteru zůstanou neporušena)
+- Co znamená in-sync replica (když se vypne jeden broker, tak v kafdrop bude vidět, že repliky nejsou in-sync)

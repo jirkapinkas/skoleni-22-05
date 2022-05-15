@@ -1,3 +1,10 @@
+Spuštění:
+
+
+    docker compose up -d
+
+
+
 * kafdrop:  http://localhost:9000
 * kafka-ui: http://localhost:8888
 * akhq:     http://localhost:8080

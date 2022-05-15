@@ -2,9 +2,13 @@ Zavolat:
 
     docker-compose up -d
 
-Spustit:
+Spustit MainCreateTopic (vytvoří topic first_topic s pěti partitions)
 
-    Aplikaci producera a consumera
+Spustit MainProducer, tím se budou do topicu ukládat testovací data
+
+Spustit aplikace MainConsumer1, 2 a 3 a na tom je vidět, jak Kafka distribuuje zátěž mezi více consumerů
+
+Topic je možné smazat pomocí MainDeleteTopic
 
 List topicu:
 

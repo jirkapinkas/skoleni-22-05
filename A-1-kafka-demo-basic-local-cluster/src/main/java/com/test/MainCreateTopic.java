@@ -16,7 +16,7 @@ public class MainCreateTopic {
 
             Map<String, String> configs = new HashMap<>();
             int partitions = 5;
-            short replication = 1;
+            short replication = 2;
 
             admin.createTopics(List.of(new NewTopic("first_topic", partitions, replication).configs(configs)));
         }

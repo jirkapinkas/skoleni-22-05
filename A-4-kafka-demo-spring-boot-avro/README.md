@@ -1,0 +1,1 @@
+Tento příklad je v principu stejný jako A-4-kafka-demo-avro, jenom je postavený na Spring Boot

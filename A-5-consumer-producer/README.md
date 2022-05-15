@@ -1,14 +1,29 @@
+Tento příklad slouží jako odrazový můstek pro vytvoření vlastního Producera a Consumera.
+Typicky to jsou totiž stand-alone aplikace, jako v tomto příkladu. Zde je použitá čistá Java,
+ještě lepší by bylo použít Spring Boot konzolovou aplikaci, čímž by se konfigurace zjednodušila
+(ale samozřejmě člověk pak musí znát Spring Boot) :-)
+
 1. Spustit Kafku:
 
 
       docker compose up -d
 
-2. Provest build aplikace (vygeneruje do `target/generates-sources` tridy na zaklade `src/main/avro/*.avsc` souboru)
+2. Provést build aplikací (vygeneruje do `target/generates-sources` tridy na zaklade `src/main/avro/*.avsc` souboru)
 
 
-      mvn clean package
+    cd demo-avro-consumer
+    mvn clean package
+    cd ..
+    cd demo-avro-producer
+    mvn clean package
+    cd ..
 
-3. Spustit MainProducer a MainConsumer
+3. Spustit Producer a Consumer:
+
+
+    java -jar demo-avro-producer/target/producer.jar
+    java -jar demo-avro-consumer/target/consumer.jar
+
 4. Timto se prida schema (na Linuxu). Pokud se neprida rucne, pak ho Producer automaticky vytvori (tohle chovani Kafky se da vypnout):
 
 curl -X POST \

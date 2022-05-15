@@ -1,1 +1,3 @@
-Nutne vytvorit ucet na confluent cloudu a nahradit username a password v MainConsumer & MainProducer
+- Nutné vytvořit účet na Confluent Cloud a nahradit username a password v MainProducer & MainConsumer
+- Poté je nutné v Confluent Cloud vytvořit Topic s názvem first_topic
+- A finálně spustit MainProducer & MainConsumer
