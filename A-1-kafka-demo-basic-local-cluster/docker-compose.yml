@@ -66,6 +66,28 @@ services:
       - kafka_1
     networks:
       - kafka_net
+  akhq:
+    # build:
+    #   context: .
+    image: tchiotludo/akhq
+    environment:
+      AKHQ_CONFIGURATION: |
+        akhq:
+          connections:
+            docker-kafka-server:
+              properties:
+                bootstrap.servers: "kafka_1:9092"
+              # schema-registry:
+              #   url: "http://schema-registry:8085"
+              # connect:
+              #   - name: "connect"
+              #     url: "http://connect:8083"
+    networks:
+      - kafka_net
+    ports:
+      - 8080:8080
+    depends_on:
+      - kafka_1
 networks:
   kafka_net:
     driver: bridge
