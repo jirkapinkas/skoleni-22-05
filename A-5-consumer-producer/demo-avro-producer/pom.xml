@@ -116,6 +116,21 @@
                 </executions>
             </plugin>
 
+            <!-- mvn schema-registry:register -->
+            <!--<plugin>
+                <groupId>io.confluent</groupId>
+                <artifactId>kafka-schema-registry-maven-plugin</artifactId>
+                <version>7.4.1</version>
+                <configuration>
+                    <schemaRegistryUrls>
+                        <param>http://localhost:8081</param>
+                    </schemaRegistryUrls>
+                    <subjects>
+                        <first_topic-value>src/main/avro/movie.avsc</first_topic-value>
+                    </subjects>
+                </configuration>
+            </plugin>-->
+
             <plugin>
                 <groupId>io.confluent</groupId>
                 <artifactId>kafka-schema-registry-maven-plugin</artifactId>
