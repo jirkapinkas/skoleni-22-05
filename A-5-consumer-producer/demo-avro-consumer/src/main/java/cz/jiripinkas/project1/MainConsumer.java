@@ -42,7 +42,7 @@ public class MainConsumer {
             for (ConsumerRecord<String, Movie> record : records) {
                 // Kdyz neni nastavena property "specific.avro.reader=true", pak vstupem musi byt GenericRecord
                 // Kdyz nastavena je, pak vstupem muze byt GenericRecord nebo Movie
-                log.info("received: {} {} {} {} ", record.partition(), record.offset(), record.key(), record.value().getTitle());
+                log.info("received: {} {} {} {} ", record.partition(), record.offset(), record.key(), record.value());
             }
         }
 

@@ -98,6 +98,30 @@
             </plugin>
 
             <plugin>
+                <groupId>io.confluent</groupId>
+                <artifactId>kafka-schema-registry-maven-plugin</artifactId>
+                <version>7.4.1</version>
+                <executions>
+                    <execution>
+                        <id>download</id>
+                        <goals>
+                            <goal>download</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <schemaRegistryUrls>
+                                <param>http://localhost:8081</param>
+                            </schemaRegistryUrls>
+                            <outputDirectory>${project.build.directory}/avro</outputDirectory>
+                            <subjectPatterns>
+                                <param>^first_topic-(key|value)$</param>
+                            </subjectPatterns>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.apache.avro</groupId>
                 <artifactId>avro-maven-plugin</artifactId>
                 <version>1.11.0</version>
@@ -108,13 +132,14 @@
                             <goal>schema</goal>
                         </goals>
                         <configuration>
-                            <sourceDirectory>src/main/avro</sourceDirectory>
+                            <sourceDirectory>${project.build.directory}/avro</sourceDirectory>
                             <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
                             <stringType>String</stringType>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 
