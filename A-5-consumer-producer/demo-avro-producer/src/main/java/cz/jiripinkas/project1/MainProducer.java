@@ -28,7 +28,8 @@ public class MainProducer {
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class.getName());
         props.put(AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://localhost:8081");
-
+        props.put(AbstractKafkaSchemaSerDeConfig.AUTO_REGISTER_SCHEMAS, false);
+        props.put(AbstractKafkaSchemaSerDeConfig.USE_LATEST_VERSION, true);
 
         KafkaProducer<String, Movie> producer = new KafkaProducer<>(props);
         while (true) {
@@ -39,7 +40,7 @@ public class MainProducer {
                     .build();
             producer.send(new ProducerRecord<>("first_topic", null, value));
             log.info("sent: {}", value);
-            Thread.sleep(100);
+            Thread.sleep(1_000);
         }
     }
 }
