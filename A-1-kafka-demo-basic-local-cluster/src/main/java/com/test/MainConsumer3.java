@@ -34,8 +34,8 @@ public class MainConsumer3 {
 
         while(true) {
             ConsumerRecords<String, String> records = consumer.poll(Duration.of(1, ChronoUnit.SECONDS));
-            for (ConsumerRecord<String, String> record : records) {
-                log.info("received: {} {} {} {} ", record.partition(), record.offset(), record.key(), record.value());
+            for (ConsumerRecord<String, String> r : records) {
+                log.info("received: {} {} {} {} ", r.partition(), r.offset(), r.key(), r.value());
             }
         }
     }

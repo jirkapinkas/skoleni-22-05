@@ -15,8 +15,9 @@ public class MainCreateTopic {
         try(AdminClient admin = AdminClient.create(config)) {
 
             Map<String, String> configs = new HashMap<>();
+            configs.put("min.insync.replicas", "2");
             int partitions = 5;
-            short replication = 2;
+            short replication = 3;
 
             admin.createTopics(List.of(new NewTopic("first_topic", partitions, replication).configs(configs)));
         }
