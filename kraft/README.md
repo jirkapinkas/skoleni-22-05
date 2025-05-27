@@ -1,3 +1,5 @@
+Prevzato odsud: https://github.com/apache/kafka/tree/trunk/docker/examples/docker-compose-files/cluster
+
 Spusteni ve Windows:
 
 set IMAGE=apache/kafka:latest
@@ -11,6 +13,8 @@ pip install git+https://github.com/dpkp/kafka-python.git
 
 
 cd /opt/kafka/bin
+
+./kafka-topics.sh  --list --bootstrap-server kafka-1:9092
 
 ./kafka-topics.sh --bootstrap-server kafka-2:9092 --list
 
