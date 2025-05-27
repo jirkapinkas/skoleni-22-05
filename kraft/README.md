@@ -14,4 +14,4 @@ cd /opt/kafka/bin
 
 ./kafka-topics.sh --bootstrap-server kafka-2:9092 --list
 
-./kafka-topics.sh --bootstrap-server kafka-2:9092 --describe first_topic
+./kafka-topics.sh --bootstrap-server kafka-2:9092 --describe --topic first_topic
